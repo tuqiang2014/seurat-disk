@@ -216,7 +216,7 @@ as.Seurat.h5Seurat <- function(
     assay.objects[[assay]] <- AssembleAssay(
       assay = assay,
       file = x,
-      slots = assays[[assay]],
+      slots =slots %||%  assays[[assay]],
       verbose = verbose
     )
   }

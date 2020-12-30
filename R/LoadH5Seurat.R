@@ -73,7 +73,7 @@ LoadH5Seurat <- function(file, ...) {
 LoadH5Seurat.character <- function(
   file,
   assays = NULL,
-   solts = NULL,
+   slots = NULL,
   reductions = NULL,
   graphs = NULL,
   images = NULL,
@@ -87,7 +87,7 @@ LoadH5Seurat.character <- function(
   hfile <- h5Seurat$new(filename = file, mode = 'r')
   on.exit(expr = hfile$close_all())
   return(LoadH5Seurat(
-    file = hfile,assays = assays,solts = solts,
+    file = hfile,assays = assays,slots = slots,
     reductions = reductions,
     graphs = graphs,
     images = images,
@@ -107,7 +107,7 @@ LoadH5Seurat.character <- function(
 LoadH5Seurat.H5File <- function(
   file,
   assays = NULL,
-  solts = NULL,
+  slots = NULL,
   reductions = NULL,
   graphs = NULL,
   images = NULL,
@@ -121,7 +121,7 @@ LoadH5Seurat.H5File <- function(
   return(LoadH5Seurat(
     file = as.h5Seurat(x = file),
     assays = assays,
-    solts = solts,
+    slots = slots,
     reductions = reductions,
     graphs = graphs,
     images = images,
@@ -143,7 +143,7 @@ LoadH5Seurat.H5File <- function(
 LoadH5Seurat.h5Seurat <- function(
   file,
   assays = NULL,
-  solts = NULL,
+  slots = NULL,
   reductions = NULL,
   graphs = NULL,
   images = NULL,
@@ -157,7 +157,7 @@ LoadH5Seurat.h5Seurat <- function(
   return(as.Seurat(
     x = file,
     assays = assays,
-    solts = solts,
+    slots = slots,
     reductions = reductions,
     graphs = graphs,
     images = images,
@@ -185,7 +185,7 @@ LoadH5Seurat.h5Seurat <- function(
 as.Seurat.h5Seurat <- function(
   x,
   assays = NULL,
-  solts = NULL,
+  slots = NULL,
   reductions = NULL,
   graphs = NULL,
   images = NULL,
